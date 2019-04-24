@@ -18,6 +18,10 @@ class ProgressAtRatioView: UIView {
         didSet {
             ratioLabel.text = String(format:"%.0f", ratio * 100) + "%"
             ratioLabel.sizeToFit()
+         
+            if let arcView = arcView {
+                ratioLabel.center = arcView.center
+            }
             ratioLabel.setNeedsDisplay()
             ratioLabel.setNeedsLayout()
         }
