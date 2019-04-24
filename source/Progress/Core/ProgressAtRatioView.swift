@@ -17,6 +17,9 @@ class ProgressAtRatioView: UIView {
     internal var ratio: CGFloat = 0.0 {
         didSet {
             ratioLabel.text = String(format:"%.0f", ratio * 100) + "%"
+            ratioLabel.sizeToFit()
+            ratioLabel.setNeedsDisplay()
+            ratioLabel.setNeedsLayout()
         }
     }
     
